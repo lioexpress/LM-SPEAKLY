@@ -16,6 +16,10 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
+      - name: Generate Android Skeleton
+        run: |
+          flutter create . --org com.lmspeakly.app --project-name lm_speakly --platforms android
+
       - name: Get Dependencies
         run: flutter pub get
 
@@ -25,5 +29,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: LM-SPEAKLY-App
+          name: LM-SPEAKLY-v1.0
           path: build/app/outputs/flutter-apk/app-release.apk
